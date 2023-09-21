@@ -6,7 +6,7 @@
 /*   By: akdovlet <akdovlet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 11:20:49 by akdovlet          #+#    #+#             */
-/*   Updated: 2023/09/20 17:37:56 by akdovlet         ###   ########.fr       */
+/*   Updated: 2023/09/21 19:36:20 by akdovlet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,39 +66,30 @@ char	*get_next_line(int fd)
 	static char	*buffer;
 	char		*line;
 
-	buffer = NULL;
 	if (fd <= 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	buffer = ft_init(buffer, fd);
 	if (!buffer)
 		return (free(buffer), NULL);
-	// printf("\n===========buffer=============================\n");
-	// printf("%s", buffer);
-	// printf("\n==============line============================\n");
 	line = ft_line(buffer);
-	// printf("%s", line);
-	// printf("\n=============next_line_buffer=================\n");
 	buffer = ft_next_line(buffer);
-	// printf("%s", buffer);
-	// printf("\n==============================================\n");
 	return (line);
 }
 
-int main()
-{
-	int			fd;
-	int			i;
-	char	*dest = NULL;
+// int main()
+// {
+// 	int			fd;
+// 	int			i;
+// 	char	*dest = NULL;
 
-	i = 0;
-	fd = open("nietzsche", O_RDONLY);
-	while (i < 29)
-	{
-		dest = get_next_line(fd);
-		printf("%s", dest);
-		i++;
-		free(dest);
-	}
-	free(dest);
-	close(fd);
-}
+// 	i = 0;
+// 	fd = open("stjoan", O_RDONLY);
+// 	while (i < 13)
+// 	{
+// 		dest = get_next_line(fd);
+// 		printf("%s", dest);
+// 		i++;
+// 		free(dest);
+// 	}
+// 	close(fd);
+// }

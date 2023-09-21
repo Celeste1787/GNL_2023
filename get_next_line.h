@@ -6,7 +6,7 @@
 /*   By: akdovlet <akdovlet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 15:36:59 by akdovlet          #+#    #+#             */
-/*   Updated: 2023/09/20 12:50:55 by akdovlet         ###   ########.fr       */
+/*   Updated: 2023/09/21 19:36:43 by akdovlet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@
 
 char	*ft_strjoin(char *s1, char *s2);
 size_t	ft_strlen(char *str);
-int	ft_newline(char *str);
+int		ft_newline(char *str);
 char	*ft_next_line(char *str);
+char	*get_next_line(int fd);
+char	*ft_line(char *str);
+char	*ft_init(char *buffer, int fd);
 
 #endif
