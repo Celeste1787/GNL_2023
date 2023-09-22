@@ -6,7 +6,7 @@
 /*   By: akdovlet <akdovlet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 11:20:49 by akdovlet          #+#    #+#             */
-/*   Updated: 2023/09/21 19:36:20 by akdovlet         ###   ########.fr       */
+/*   Updated: 2023/09/22 20:47:03 by akdovlet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ char	*get_next_line(int fd)
 	static char	*buffer;
 	char		*line;
 
+	buffer = NULL;
 	if (fd <= 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	buffer = ft_init(buffer, fd);
@@ -76,20 +77,19 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-// int main()
-// {
-// 	int			fd;
-// 	int			i;
-// 	char	*dest = NULL;
+int main()
+{
+	int			fd;
+	char	*dest = NULL;
 
-// 	i = 0;
-// 	fd = open("stjoan", O_RDONLY);
-// 	while (i < 13)
-// 	{
-// 		dest = get_next_line(fd);
-// 		printf("%s", dest);
-// 		i++;
-// 		free(dest);
-// 	}
-// 	close(fd);
-// }
+
+	fd = open("nietzsche", O_RDONLY);
+	printf("%s %d\n", "ok");
+	while ((dest = get_next_line(fd)))
+	{	
+		printf("%s", dest);
+	//	printf("%s", dest);
+		free(dest);
+	}
+	close(fd);
+}

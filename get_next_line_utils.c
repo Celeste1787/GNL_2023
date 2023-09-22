@@ -6,7 +6,7 @@
 /*   By: akdovlet <akdovlet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 15:36:42 by akdovlet          #+#    #+#             */
-/*   Updated: 2023/09/21 20:47:50 by akdovlet         ###   ########.fr       */
+/*   Updated: 2023/09/22 12:02:30 by akdovlet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ size_t	ft_strlen(char *str)
 	if (str)
 	{
 		while (str[i])
-			i++;		
+			i++;
 	}
 	return (i);
 }

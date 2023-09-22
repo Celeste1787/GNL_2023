@@ -6,12 +6,15 @@
 /*   By: akdovlet <akdovlet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 15:36:59 by akdovlet          #+#    #+#             */
-/*   Updated: 2023/09/21 19:36:43 by akdovlet         ###   ########.fr       */
+/*   Updated: 2023/09/22 13:51:35 by akdovlet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
+# ifndef BUFFER_SIZE
+# define BUFFER_SIZE 42
+#endif
 
 # include <unistd.h>
 # include <stdlib.h>
