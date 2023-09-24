@@ -6,7 +6,7 @@
 /*   By: akdovlet <akdovlet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 11:20:49 by akdovlet          #+#    #+#             */
-/*   Updated: 2023/09/22 20:47:03 by akdovlet         ###   ########.fr       */
+/*   Updated: 2023/09/23 20:19:36 by akdovlet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,19 +77,22 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-int main()
+int main(int ac, char **av)
 {
-	int			fd;
-	char	*dest = NULL;
+	if (ac == 2)
+	{
+		int			fd;
+		char		*dest = NULL;
 
-
-	fd = open("nietzsche", O_RDONLY);
-	printf("%s %d\n", "ok");
-	while ((dest = get_next_line(fd)))
-	{	
-		printf("%s", dest);
-	//	printf("%s", dest);
-		free(dest);
+		fd = open(av[1], O_RDONLY);
+		while (1)
+		{
+			dest = get_next_line(fd);
+			printf("%s", dest);
+			if (!dest)
+				break ;
+			free(dest);
+		}
+		close(fd);
 	}
-	close(fd);
 }

@@ -6,7 +6,7 @@
 /*   By: akdovlet <akdovlet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 15:36:42 by akdovlet          #+#    #+#             */
-/*   Updated: 2023/09/22 12:02:30 by akdovlet         ###   ########.fr       */
+/*   Updated: 2023/09/23 20:31:18 by akdovlet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,13 @@ char	*ft_next_line(char *str)
 	next = malloc(sizeof(char) * (ft_strlen(str) - i));
 	if (!next)
 		return (NULL);
-	j = i + 1;
+	j = 0;
 	while (str[++i])
 	{
-		next[i - j] = str[i];
+		next[j] = str[i];
+		j++;
 	}
-	next[i - j] = '\0';
+	next[j] = '\0';
 	free(str);
 	return (next);
 }
@@ -82,8 +83,8 @@ char	*ft_strjoin(char *s1, char *s2)
 	}
 	if (!s1 || !s2)
 		return (NULL);
-	size = ft_strlen(s1) + ft_strlen(s2) + 1;
-	fusion = malloc(sizeof(char) * size);
+	size = ft_strlen(s1) + ft_strlen(s2);
+	fusion = malloc(sizeof(char) * (size + 1));
 	if (!fusion)
 		return (NULL);
 	while (s1[++i])
